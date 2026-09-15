@@ -1,0 +1,403 @@
+<main>
+  <!-- HERO -->
+  <section class="relative min-h-[92vh] flex items-center overflow-hidden bg-[#f8fdf9]">
+    <div
+      class="absolute inset-0 opacity-20 bg-cover bg-center"
+      style="background-image: url('https://images.unsplash.com/photo-1626426535057-43d55f62993f?w=1600&h=900&fit=crop&auto=format')"
+      aria-hidden="true"
+    ></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-[#f8fdf9] via-[#f8fdf9]/90 to-transparent" aria-hidden="true"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-[#17A34C]/10 border border-[#17A34C]/20 rounded-full px-4 py-1.5 mb-6">
+          <span class="w-2 h-2 rounded-full bg-[#17A34C] animate-pulse"></span>
+          <span class="text-[#17A34C] text-sm font-semibold">Elmhurst Accredited</span>
+        </div>
+
+        <h1
+          style="font-family: Outfit, sans-serif; font-weight: 900;"
+          class="text-5xl sm:text-6xl leading-[1.05] text-[#1a1a1a] mb-4"
+        >
+          Residential<br />
+          <span class="text-[#17A34C]">EPC London</span>
+        </h1>
+        <p
+          style="font-family: Outfit, sans-serif; font-weight: 600;"
+          class="text-xl text-gray-600 mb-4"
+        >
+          Fast & Professional Energy Performance Certificates Across London
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-8 max-w-lg">
+          Need an EPC in London? EPC London UK provides professional residential Energy Performance Certificates across all London boroughs and under the M25. Whether you're selling, letting or managing a property, we make booking simple, straightforward and convenient.
+        </p>
+
+        <div class="flex flex-wrap gap-3">
+          <a
+            routerLink="/contact"
+            class="px-7 py-4 bg-[#17A34C] text-white font-bold rounded-xl hover:bg-[#0f7a38] transition-all shadow-lg shadow-[#17A34C]/25 text-base"
+            style="font-family: Outfit, sans-serif;"
+          >
+            Book Your EPC
+          </a>
+          <a
+            href="tel:+447498043736"
+            class="px-7 py-4 border-2 border-[#1a1a1a] text-[#1a1a1a] font-bold rounded-xl hover:bg-[#1a1a1a] hover:text-white transition-all text-base"
+            style="font-family: Outfit, sans-serif;"
+          >
+            Call +44 7498 043736
+          </a>
+          <a
+            href="https://wa.me/447498043736?text=Hello%2C%20I%20would%20like%20to%20book%20a%20residential%20EPC%20in%20London.%20Please%20can%20you%20provide%20availability%3F"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-7 py-4 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#1da855] transition-all text-base flex items-center gap-2"
+            style="font-family: Outfit, sans-serif;"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+
+      <!-- EPC rating visual -->
+      <div class="hidden md:flex justify-center">
+        <div class="relative">
+          <div class="w-72 bg-white rounded-2xl shadow-2xl p-6 border border-gray-100">
+            <div class="text-center mb-5">
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1">Energy Rating</p>
+              <h3 style="font-family: Outfit, sans-serif;" class="text-lg font-bold text-gray-800">Energy Performance Certificate</h3>
+            </div>
+            
+            @for (row of epcRatings; track row.grade) {
+              <div class="flex items-center gap-2 mb-1">
+                <div
+                  class="flex items-center justify-between px-2 h-7 rounded text-white text-xs font-bold"
+                  [style.background-color]="row.color"
+                  [style.width]="row.w"
+                >
+                  <span>{{ row.grade }}</span>
+                  <span class="opacity-80 text-[10px]">{{ row.range }}</span>
+                </div>
+              </div>
+            }
+
+            <div class="mt-4 pt-4 border-t border-gray-100 text-center">
+              <p class="text-xs text-gray-400">Illustrative EPC rating graphic only</p>
+              <p class="text-xs text-[#17A34C] font-semibold mt-1">From £89.99 · Elmhurst Accredited</p>
+            </div>
+          </div>
+          <div class="absolute -bottom-4 -right-4 bg-[#17A34C] text-white rounded-xl px-4 py-3 shadow-lg">
+            <p class="text-xs font-semibold opacity-80">Starting from</p>
+            <p style="font-family: Outfit, sans-serif;" class="text-2xl font-black">£89.99</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="bg-[#17A34C] text-white py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm font-semibold">
+        @for (item of trustBadges; track item) {
+          <span>{{ item }}</span>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="py-20 bg-white" id="pricing">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <p class="text-[#17A34C] font-semibold text-sm uppercase tracking-widest mb-2">Transparent Pricing</p>
+        <h2 style="font-family: Outfit, sans-serif; font-weight: 800;" class="text-4xl text-[#1a1a1a] mb-3">
+          EPCs From <span class="text-[#17A34C]">£89.99</span>
+        </h2>
+        <p class="text-gray-500">Residential EPC pricing based on property size. All inclusive — no hidden costs.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        @for (p of pricing; track p.size) {
+          <div
+            [ngClass]="'relative rounded-2xl p-6 flex flex-col items-center text-center transition-all ' +
+              (p.featured
+                ? 'bg-[#17A34C] text-white shadow-xl shadow-[#17A34C]/30 scale-105'
+                : 'bg-[#f8fdf9] border border-[#17A34C]/15 hover:border-[#17A34C]/40 hover:shadow-md')"
+          >
+            @if (p.featured) {
+              <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#1a1a1a] text-white text-xs font-bold px-3 py-1 rounded-full">
+                Most Popular
+              </span>
+            }
+            <p style="font-family: Outfit, sans-serif;" [ngClass]="'text-sm font-bold uppercase tracking-wide mb-3 ' + (p.featured ? 'text-white/80' : 'text-gray-500')">
+              {{ p.size }}
+            </p>
+            <p style="font-family: Outfit, sans-serif; font-weight: 900;" [ngClass]="'text-4xl mb-1 ' + (p.featured ? 'text-white' : 'text-[#17A34C]')">
+              {{ p.price }}
+            </p>
+            <p [ngClass]="'text-xs mb-5 ' + (p.featured ? 'text-white/70' : 'text-gray-400')">Residential EPC*</p>
+            <a
+              routerLink="/contact"
+              [ngClass]="'w-full py-2.5 rounded-xl font-bold text-sm transition-all ' +
+                (p.featured
+                  ? 'bg-white text-[#17A34C] hover:bg-gray-50'
+                  : 'bg-[#17A34C] text-white hover:bg-[#0f7a38]')"
+              style="font-family: Outfit, sans-serif;"
+            >
+              Book Now
+            </a>
+          </div>
+        }
+      </div>
+
+      <div class="mt-8 bg-[#f8fdf9] border border-[#17A34C]/15 rounded-xl p-5 text-sm text-gray-600 space-y-1">
+        <p><span class="font-semibold">* All inclusive — No hidden cost.</span></p>
+        <p>£5 parking charge applies where paid parking is required at the property.</p>
+        <p>£18 Congestion Charge applies where the property is located within the Congestion Charge Zone.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IS AN EPC -->
+  <section class="py-20 bg-[#f8fdf9]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-[#17A34C] font-semibold text-sm uppercase tracking-widest mb-2">Know Your Property</p>
+        <h2 style="font-family: Outfit, sans-serif; font-weight: 800;" class="text-4xl text-[#1a1a1a] mb-5">
+          What Is an Energy Performance Certificate?
+        </h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          An Energy Performance Certificate, commonly known as an <strong>EPC</strong>, provides information about the energy efficiency of a property. It gives the property an energy efficiency rating and provides recommendations that can help improve the property's energy performance.
+        </p>
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-amber-800 text-sm leading-relaxed">
+          <strong>Do you need one?</strong> If you are selling or letting a residential property, an EPC may be required. Speak to us if you're unsure whether your property needs one.
+        </div>
+        <div class="mt-6 space-y-2">
+          @for (item of epcRequirements; track item) {
+            <div class="flex items-center gap-2 text-sm text-gray-700">
+              <span class="w-5 h-5 rounded-full bg-[#17A34C]/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3 h-3 text-[#17A34C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+              </span>
+              {{ item }}
+            </div>
+          }
+        </div>
+      </div>
+      <div class="relative">
+        <img
+          src="https://images.unsplash.com/photo-1442181530688-d812138618b3?w=700&h=500&fit=crop&auto=format"
+          alt="London residential property terrace"
+          class="rounded-2xl w-full object-cover h-80 bg-gray-200"
+          loading="lazy"
+        />
+        <div class="absolute bottom-4 left-4 bg-white rounded-xl px-4 py-3 shadow-lg">
+          <p class="text-xs text-gray-400 font-medium">Coverage</p>
+          <p style="font-family: Outfit, sans-serif;" class="font-bold text-[#17A34C] text-sm">All London + M25</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <p class="text-[#17A34C] font-semibold text-sm uppercase tracking-widest mb-2">Why Us</p>
+        <h2 style="font-family: Outfit, sans-serif; font-weight: 800;" class="text-4xl text-[#1a1a1a]">
+          Why Choose EPC London UK?
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        @for (card of whyCards; track card.title) {
+          <div class="p-6 rounded-2xl border border-gray-100 hover:border-[#17A34C]/30 hover:shadow-md transition-all bg-white group">
+            <div class="w-12 h-12 rounded-xl bg-[#f8fdf9] flex items-center justify-center text-2xl mb-4 group-hover:bg-[#17A34C]/10 transition-colors">
+              {{ card.icon }}
+            </div>
+            <h3 style="font-family: Outfit, sans-serif;" class="text-lg font-bold text-[#1a1a1a] mb-2">{{ card.title }}</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">{{ card.text }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-20 bg-[#1a1a1a] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-14">
+        <p class="text-[#17A34C] font-semibold text-sm uppercase tracking-widest mb-2">Simple Process</p>
+        <h2 style="font-family: Outfit, sans-serif; font-weight: 800;" class="text-4xl">Our EPC Process</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        @for (item of processSteps; track item.step) {
+          <div class="relative">
+            <div class="text-[#17A34C] font-black text-5xl opacity-20 mb-3" style="font-family: Outfit, sans-serif;">
+              {{ item.step }}
+            </div>
+            <h3 style="font-family: Outfit, sans-serif;" class="text-xl font-bold text-white mb-2">{{ item.title }}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{{ item.desc }}</p>
+          </div>
+        }
+      </div>
+      <div class="mt-12 text-center">
+        <a
+          routerLink="/contact"
+          class="inline-block px-8 py-4 bg-[#17A34C] text-white font-bold rounded-xl hover:bg-[#0f7a38] transition-all shadow-lg"
+          style="font-family: Outfit, sans-serif;"
+        >
+          Book Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE HELP -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <p class="text-[#17A34C] font-semibold text-sm uppercase tracking-widest mb-2">Who We Help</p>
+        <h2 style="font-family: Outfit, sans-serif; font-weight: 800;" class="text-4xl text-[#1a1a1a]">We Help You</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        @for (item of whoWeHelp; track item.who) {
+          <div class="flex items-start gap-4 p-5 rounded-2xl border border-gray-100 hover:border-[#17A34C]/30 hover:shadow-sm transition-all">
+            <span class="w-10 h-10 rounded-lg bg-[#17A34C]/10 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-[#17A34C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+            </span>
+            <div>
+              <h3 style="font-family: Outfit, sans-serif;" class="font-bold text-[#1a1a1a] mb-1">{{ item.who }}</h3>
+              <p class="text-gray-500 text-sm">{{ item.desc }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- LONDON COVERAGE -->
+  <section class="py-20 bg-[#f8fdf9]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <p class="text-[#17A34C] font-semibold text-sm uppercase tracking-widest mb-2">Service Area</p>
+        <h2 style="font-family: Outfit, sans-serif; font-weight: 800;" class="text-4xl text-[#1a1a1a] mb-3">
+          Residential EPCs Across London
+        </h2>
+        <p class="text-gray-500 max-w-xl mx-auto">
+          EPC London UK provides residential Energy Performance Certificates across all London boroughs and the City of London, with coverage for properties under/within the M25.
+        </p>
+      </div>
+
+      <!-- Visual London map placeholder -->
+      <div class="relative bg-[#17A34C]/5 border border-[#17A34C]/15 rounded-2xl p-8 mb-10 overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center opacity-5" aria-hidden="true">
+          <svg viewBox="0 0 200 200" class="w-full h-full" fill="none">
+            <circle cx="100" cy="100" r="90" stroke="#17A34C" strokeWidth="2" strokeDasharray="8 4" />
+            <circle cx="100" cy="100" r="60" stroke="#17A34C" strokeWidth="1.5" />
+            <circle cx="100" cy="100" r="30" stroke="#17A34C" strokeWidth="1" />
+          </svg>
+        </div>
+        <div class="relative text-center">
+          <div class="inline-flex items-center gap-3 bg-[#17A34C] text-white rounded-2xl px-8 py-6 shadow-xl shadow-[#17A34C]/25">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            <div class="text-left">
+              <p style="font-family: Outfit, sans-serif;" class="text-2xl font-black">All 33 London Boroughs</p>
+              <p class="text-white/80 text-sm">+ City of London + M25</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+        @for (borough of londonBoroughs; track borough) {
+          <div
+            class="text-center px-2 py-2.5 rounded-lg bg-white border border-gray-100 hover:border-[#17A34C]/40 hover:bg-[#17A34C]/5 transition-all text-xs font-medium text-gray-600 hover:text-[#17A34C]"
+          >
+            {{ borough }}
+          </div>
+        }
+        <div class="text-center px-2 py-2.5 rounded-lg bg-[#17A34C] text-white text-xs font-bold flex items-center justify-center">
+          + M25
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRONG SALES CTA -->
+  <section class="py-20 bg-[#17A34C] text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2 style="font-family: Outfit, sans-serif; font-weight: 900;" class="text-4xl sm:text-5xl mb-4">
+        Need an EPC for Your London Property?
+      </h2>
+      <p class="text-white/80 text-lg mb-6">
+        Whether you're selling, letting or preparing your residential property for the market, booking your EPC is simple.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 mb-8">
+        @for (badge of ['From £89.99', 'Elmhurst Accredited', 'London-Wide Coverage', 'Book Today']; track badge) {
+          <span class="bg-white/15 border border-white/20 px-4 py-1.5 rounded-full text-sm font-semibold">
+            {{ badge }}
+          </span>
+        }
+      </div>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="tel:+447498043736"
+          class="px-8 py-4 bg-white text-[#17A34C] font-bold rounded-xl hover:bg-gray-50 transition-all"
+          style="font-family: Outfit, sans-serif;"
+        >
+          Call +44 7498 043736
+        </a>
+        <a
+          routerLink="/contact"
+          class="px-8 py-4 bg-[#1a1a1a] text-white font-bold rounded-xl hover:bg-gray-900 transition-all"
+          style="font-family: Outfit, sans-serif;"
+        >
+          Book Your EPC
+        </a>
+        <a
+          href="https://wa.me/447498043736?text=Hello%2C%20I%20would%20like%20to%20book%20a%20residential%20EPC%20in%20London."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-8 py-4 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#1da855] transition-all"
+          style="font-family: Outfit, sans-serif;"
+        >
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <p class="text-[#17A34C] font-semibold text-sm uppercase tracking-widest mb-2">Common Questions</p>
+        <h2 style="font-family: Outfit, sans-serif; font-weight: 800;" class="text-4xl text-[#1a1a1a]">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-3">
+        @for (faq of faqs; track faq.q; let i = $index) {
+          <div class="border border-gray-100 rounded-2xl overflow-hidden">
+            <button
+              (click)="toggleFaq(i)"
+              class="w-full text-left px-6 py-5 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
+            >
+              <span style="font-family: Outfit, sans-serif;" class="font-semibold text-[#1a1a1a] text-base">{{ faq.q }}</span>
+              <svg
+                [ngClass]="'w-5 h-5 text-[#17A34C] shrink-0 transition-transform ' + (openFaq() === i ? 'rotate-180' : '')"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            @if (openFaq() === i) {
+              <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-50 pt-4">
+                {{ faq.a }}
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</main>
